@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from copy import deepcopy
 
-from helper import eq_, eq_str
+from helper import eq_
 
 from anytree import Node, RenderTree
 from anytree.exporter import DictExporter
@@ -40,7 +40,7 @@ def test_dict_importer():
             "        └── AnyNode(id='sub1Ca')",
         ]
     )
-    eq_str(str(r), expected)
+    eq_(str(r), expected)
 
 
 def test_dict_importer_node():
@@ -79,4 +79,4 @@ def test_dict_importer_node():
             "        └── Node('/root/sub1/sub1C/sub1Ca')",
         ]
     )
-    eq_str(str(r), expected)
+    eq_(str(r), expected)

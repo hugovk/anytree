@@ -1,7 +1,4 @@
-import six
-
-
-class AbstractIter(six.Iterator):
+class AbstractIter:
     # pylint: disable=R0205
 
     def __init__(self, node, filter_=None, stop=None, maxlevel=None):

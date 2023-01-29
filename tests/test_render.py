@@ -1,6 +1,4 @@
-# -*- coding: utf-8 -*-
-import six
-from helper import eq_, eq_str
+from helper import eq_
 
 import anytree
 
@@ -23,7 +21,7 @@ def test_render_str():
             "└── Node('/root/sub1')",
         ]
     )
-    eq_str(str(r), expected)
+    eq_(str(r), expected)
 
     r = anytree.RenderTree(root, childiter=lambda nodes: [n for n in nodes if len(n.name) < 5])
 
@@ -34,7 +32,7 @@ def test_render_str():
             "└── Node('/root/sub1')",
         ]
     )
-    eq_str(str(r), expected)
+    eq_(str(r), expected)
 
 
 def test_render_repr():
@@ -43,10 +41,7 @@ def test_render_repr():
     anytree.Node("sub", parent=root)
     r = anytree.RenderTree(root)
 
-    if six.PY2:
-        expected = "RenderTree(Node('/root'), style=ContStyle(), " "childiter=<type 'list'>)"
-    else:
-        expected = "RenderTree(Node('/root'), style=ContStyle(), " "childiter=<class 'list'>)"
+    expected = "RenderTree(Node('/root'), style=ContStyle(), " "childiter=<class 'list'>)"
     eq_(repr(r), expected)
 
 

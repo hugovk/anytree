@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 Tree Rendering.
 
@@ -10,8 +9,6 @@ Tree Rendering.
 """
 
 import collections
-
-import six
 
 Row = collections.namedtuple("Row", ("pre", "fill", "node"))
 
@@ -138,7 +135,6 @@ class DoubleStyle(AbstractStyle):
         super(DoubleStyle, self).__init__("\u2551   ", "\u2560\u2550\u2550 ", "\u255a\u2550\u2550 ")
 
 
-@six.python_2_unicode_compatible
 class RenderTree:
     def __init__(self, node, style=ContStyle(), childiter=list, maxlevel=None):
         """

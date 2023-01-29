@@ -1,7 +1,5 @@
-# -*- coding: utf-8 -*-
 """Test custom node separator."""
 
-import six
 from helper import assert_raises, eq_
 
 import anytree as at
@@ -30,10 +28,7 @@ def test_render():
             "└── MyNode('|root|sub1')",
         ]
     )
-    if six.PY2:
-        eq_(str(r).decode("utf-8"), expected)
-    else:
-        eq_(str(r), expected)
+    eq_(str(r), expected)
 
 
 def test_get():
